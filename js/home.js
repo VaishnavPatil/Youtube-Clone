@@ -1,9 +1,9 @@
-// ✅ Function to generate unique ID
+
 function generateID() {
     return Math.random().toString(36).substring(2, 12);
 }
 
-// ✅ Array of videos (with updated titles, thumbnails, and channel name)
+
 const videos = [
     {
         videoId: generateID(),
@@ -52,11 +52,11 @@ const videos = [
     },
 ];
 
-// ✅ DOM elements
+
 const videoContainer = document.getElementById('video-container');
 const loadingSpinner = document.getElementById('loading-spinner');
 
-// ✅ Load and render videos
+
 function loadVideo() {
     videos.forEach(video => {
         const videoDiv = document.createElement('div');
@@ -82,7 +82,6 @@ function loadVideo() {
     });
 }
 
-// ✅ On window load
 window.onload = function () {
     setTimeout(() => {
         loadingSpinner.style.display = 'none';
