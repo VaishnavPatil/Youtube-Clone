@@ -1,4 +1,5 @@
-.filters {
+.filters
+{
     position: fixed;
     left: 250px;
     top: 60px;
@@ -6,21 +7,23 @@
     height: 60px;
     background: #fff;
     border-top: 1px solid #dbdbdb;
-    border-bottom: 1px solid #dbdbdb;  /* ✅ fixed typo */
+    border-bottom: 1px sollid #dbdbdb;
     padding: 0 20px;
     display: flex;
     align-items: center;
-    overflow-x: auto;        /* ✅ enables horizontal scroll */
-    overflow-y: hidden;      /* ✅ hides vertical scroll */
-    scrollbar-width: none;   /* ✅ hides scrollbar in Firefox */
-    -ms-overflow-style: none; /* ✅ hides scrollbar in IE/Edge */
-}
+    overflow-x: auto;
+    overflow-y: hidden;
+   overflow-x: auto; /* allow scrolling */
+    scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
 
-.filters::-webkit-scrollbar {
-    display: none; /* ✅ hides scrollbar in Chrome/Safari */
 }
-
-.filter-options {
+.filters ::-webkit-scrollbar
+{
+    display: none;
+}
+.filter-options
+{
     flex: 0 0 auto;
     padding: 10px 20px;
     border-radius: 50px;
@@ -31,10 +34,78 @@
     color: #242424;
     font-size: 15px;
     cursor: pointer;
-    white-space: nowrap; /* ✅ keeps words in one line */
 }
-
-.filter-options.active {
+.filter-options.active
+{
     color: #fff;
     background: #242424;
+}
+.video-container
+{
+    width: calc(100% - 250px);
+    margin-top: 120px;
+    margin-left: 250px;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 25%);
+    grid-gap: 20px 5px;
+    overflow-x: hidden;
+}
+.video
+{
+    height: auto;
+    min-height: 250px;
+}
+.thumbnail
+{
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+.channel-icon
+{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+}
+.title
+{
+    width: 100%;
+    height: 40px;
+    overflow: hidden;
+}
+.channel-name
+{
+    font-size: 14px;
+    margin: 2px 0;
+    column-rule: #979797;
+}
+.view-time
+{
+    font-size: 14px;
+    color: gray;
+}
+.spinner
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.circle
+{
+    width: 50px;
+    height: 50px;
+    border: 5px solid #ccc;
+    border-top: 5px solid #333;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
